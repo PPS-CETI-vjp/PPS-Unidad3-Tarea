@@ -27,6 +27,33 @@ Esta actividad se relaciona con el resultado de aprendizaje y criterios de evalu
 
 Lee la tarea hasta el final para ver lo que tienes que entregar e ir cogiendo las evidencias y ver lo que tienes que documentar.
 
+## Clonar repositorio de la tarea.
+
+Utilizaremos `GitHub Classroom` para la entrega de esta actividad.
+
+- Usa el siguiente código de invitación para la tarea en `GitHub Classroom`: <https://classroom.github.com/a/KDSjTOkm> y acepta la invitación:
+
+![](./images/tu3.png)
+
+Puedes acceder a la tarea desde el enlace de `github` o clonando el repositorio desde `Visual Studio Code`.
+ 
+![](./images/tu31.png)
+
+
+Si quieres puedes añadir las herramientas de `Github developer pack`
+
+![](./images/tu32.png)
+
+- Unete a `GitHub Education`
+
+
+![](./images/tu33.png)
+
+![](./images/tu3.png)
+![](./images/tu3.png)
+![](./images/tu3.png)
+![](./images/tu3.png)
+
 
 ## Apartado 1 -  Actividad: Creación del entorno de Pruebas.
 
