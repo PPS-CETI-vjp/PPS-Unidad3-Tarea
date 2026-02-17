@@ -1,3 +1,5 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/KDSjTOkm)
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=22736036&assignment_repo_type=AssignmentRepo)
 # Actividad obligatoria Unidad 3 - Tarea RA3. Detección y corrección de vulnerabilidades de aplicaciones web
 
 
@@ -10,6 +12,7 @@
 [Desarrollo](#desarrollo)
 
 [Entrega](#entrega)
+
 
 ---
 # Objetivos
@@ -33,26 +36,22 @@ Utilizaremos `GitHub Classroom` para la entrega de esta actividad.
 
 - Usa el siguiente código de invitación para la tarea en `GitHub Classroom`: <https://classroom.github.com/a/KDSjTOkm> y acepta la invitación:
 
-![](./images/tu3.png)
+![](./docs/images/tu3.png)
 
 Puedes acceder a la tarea desde el enlace de `github` o clonando el repositorio desde `Visual Studio Code`.
  
-![](./images/tu31.png)
+![](./docs/images/tu31.png)
+
+Si le das a Acceder con Visual Studio Code, tendrás que dar a permitir abrir, enlaces, descargar extensiones para vscode, etc.....
+
+![](./docs/images/tu32.png)
+
+- Si le das al repositorio, te llevará a tu repositorio. Te habrá creado un repositorio en tu espacio personal que tendrás que modificar.
 
 
-Si quieres puedes añadir las herramientas de `Github developer pack`
+![](./docs/images/tu33.png)
 
-![](./images/tu32.png)
-
-- Unete a `GitHub Education`
-
-
-![](./images/tu33.png)
-
-![](./images/tu3.png)
-![](./images/tu3.png)
-![](./images/tu3.png)
-![](./images/tu3.png)
+- Desde mi panel de control tendré acceso a tu repositorio, o sea que ya no tendrás que poner tu repositorio como público.
 
 
 ## Apartado 1 -  Actividad: Creación del entorno de Pruebas.
@@ -100,21 +99,22 @@ Crea un documento en `Markdown` con nombre `ActividadSeguridad` donde pegarás l
 
 ## Apartado 5 - Escaneo estático y dinámico de una aplicación web.
 
-Tienes en la carpeta `files` un archivo comprimido que contiene el código de una [aplicación spring java con nombre store_app](./files/store-app.zip).
+Tienes en la carpeta `app` una [aplicación spring java con nombre store_app](./files/store-app.zip).
 
 1. Realiza sobre ella un Análisis Estático de Código  (SAST) con la herramienta `SonarQube`. 
 2. Crea un contenedor docker donde se ejecute la aplicación.
 3. Realiza un Análisis de Seguridad con una herramienta DAST (Nessus o OwASP ZAP)
 4. Con los resultados del análisis estático y dinámico realiza una tabla con al menos 5 problemas en los que indicarás:
---------------------------------------------------------------------------
+
 | - Vulnerabilidad     | Nombre/breve descripción de la vulnerabilidad    |
+|----------------------|--------------------------------------------------|
 | - CWE                | Código CWE y nombre                              |
 | - Consecuencias      | Qué riesgos puede provocar la vulnerabilidad     |
 | - Localización       | Archivos de la aplicación a los que afecta       |
 | - Exploit(s)         | Como se “ataca” la aplicación                    |
 | - Solución           |Modificaciones realizadas en la aplicación para resolver la vulnerabilidad   |
-| Otra información     | Lo que consideres necesario para aclarar la vulnerabilidad |
--------------------------------------------------------------------------------------
+| - Otra información     | Lo que consideres necesario para aclarar la vulnerabilidad |
+
 
 
 ---

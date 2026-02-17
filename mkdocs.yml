@@ -1,0 +1,4 @@
+site_name: Tarea Obligatoria Unidad 3. Detección y corrección de vulnerabilidades de aplicaciones web
+nav:
+  - Home: EnunciadoTarea.md
+docs_dir: ./docs
