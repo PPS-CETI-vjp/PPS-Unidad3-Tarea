@@ -34,7 +34,7 @@ Lee la tarea hasta el final para ver lo que tienes que entregar e ir cogiendo la
 
 Utilizaremos `GitHub Classroom` para la entrega de esta actividad.
 
-- Usa el siguiente código de invitación para la tarea en `GitHub Classroom`: <https://classroom.github.com/a/KDSjTOkm> y acepta la invitación:
+- Usa el siguiente código de invitación para la tarea en `GitHub Classroom`: <https://classroom.github.com/a/d4fLsmeV> y acepta la invitación:
 
 ![](./docs/images/tu3.png)
 
@@ -42,18 +42,18 @@ Puedes acceder a la tarea desde el enlace de `github` o clonando el repositorio 
 
 ![](./docs/images/tu31.png)
 
-Si le das a Acceder con Visual Studio Code, tendrás que dar a permitir abrir, enlaces, descargar extensiones para vscode, etc.....
+Si le das a Acceder con Visual Studio Code, tendrás que dar a permitir abrir, enlaces, descargar extensiones para vscode, confiar en los autores,etc.....
 
 ![](./docs/images/tu32.png)
+
+> Si abres con `Visual Studio Code` se creará tu repositorio en `$HOME/Github-classroom/`.
 
 - Si le das al repositorio, te llevará a tu repositorio. Te habrá creado un repositorio en tu espacio personal que tendrás que modificar.
 
 
 ![](./docs/images/tu33.png)
 
-- Desde mi panel de control tendré acceso a tu repositorio, o sea que ya no tendrás que poner tu repositorio como público.
-
--
+- Desde mi panel de control tendré acceso a tu repositorio, o sea que ya no tendrás que poner tu repositorio como público, yo como profesor tendré acceso.
 
 ## Apartado 1 -  Actividad: Creación del entorno de Pruebas.
 
@@ -102,8 +102,9 @@ Crea un documento en `Markdown` con nombre `ActividadSeguridad` donde pegarás l
 
 Tienes en la carpeta `app` una [aplicación spring java con nombre store_app](./files/store-app.zip).
 
+Estas son las diferentes operaciones a realizar en este apartado:
 1. Realiza sobre ella un Análisis Estático de Código  (SAST) con la herramienta `SonarQube`.
-1. Crea un contenedor docker donde se ejecute la aplicación.
+1. Crea un contenedor docker donde se ejecute la aplicación para poder realizar el escaneo de seguridad dinámico..
 1. Realiza un Análisis de Seguridad con una herramienta DAST (Nessus o OwASP ZAP)
 1. Con los resultados del análisis estático y dinámico realiza una tabla con al menos 5 problemas en los que indicarás:
 
@@ -118,8 +119,17 @@ Tienes en la carpeta `app` una [aplicación spring java con nombre store_app](./
 
 Vamos desgranando los pasos sobre todo la compilación y creación del contenedor con Docker:
 
-### Compilación de la aplicación.
+### Apartado 5 - 1.  Escaneo estático.
 
+Consulta en la actividad de la unidad 3 cómo realizar un análisis estático de código utilizando la aplicación `SonarQube` como servidor de análisis y realiza el análisis estático de código para ver las debilidades y vulnerabilidades presentes.
+> Recuerda que la información de vulnerabilidades obtenida tendrás que utilizarla para realizar la tabla final.
+
+
+### Apartado 5 - 2. Ejecución de la aplicación.
+
+
+
+### Apartado 5 - 3. Análisis de seguridad con DAST.
 
 
 ---
