@@ -55,12 +55,13 @@ Si le das a Acceder con Visual Studio Code, tendrás que dar a permitir abrir, e
 
 - Desde mi panel de control tendré acceso a tu repositorio, o sea que ya no tendrás que poner tu repositorio como público, yo como profesor tendré acceso.
 
+---
 ## Apartado 1 -  Actividad: Creación del entorno de Pruebas.
 
 Crea el [entorno de pruebas indicado en la actividad](../Actividad-CreacionEntornoPrueba/README.md).
 Crea un archivo en `MarkDown` con nombre `CreaciónEntornoPrueba.md` donde **brevémente**, expliques cómo has creado el entorno de pruebas e incorpore capturas de pantalla donde se pueda ver la que se ha creado correctamente.
 
-
+---
 ## Apartado 2 - Vulnerabilidades de inyección de datos de entrada.
 
 Realiza alguna de las actividades que tienen que ver con **vulnerabilidades de inyección de código** o de **otros tipos vulnerabilidades de entrada**.
@@ -73,7 +74,7 @@ Crea un documento en `Markdown` con nombre `ActividadVulnerabilidadesDatosEntrad
 ...
 - Incorpora tambien un par de lineas para cada solución implementada, indicando qué medidas hemos tomado para securizar o mitigar los ataques.
 
-
+----
 ## Apartado 3 - Actividad de Autenticación, vulnerabilidades de gestión de sesiones, protección de datos sensibles o Control de acceso.
 
 Realiza alguna de las actividades que tienen que ver con vulnerabilidades que tienen que ver con **Autenticación y vulnerabilidades de gestión de sesiones**  o de **Protección de datos sensibles y Control de acceso**.
@@ -86,6 +87,7 @@ Crea un documento en `Markdown` con nombre `ActividadAutenticacion.md` donde peg
 ...
 - Incorpora tambien un par de lineas para cada solución implementada, indicando qué medidas hemos tomado para securizar o mitigar los ataques.
 
+---
 ## Apartado 4 - Actividad sobre errores en la Seguridad y componentes vulnerables.
 
 Realiza alguna de las actividades que tienen que ver con vulnerabilidades que tienen que ver con **errores en la seguridad y componentes vulnerables**.
@@ -98,6 +100,7 @@ Crea un documento en `Markdown` con nombre `ActividadSeguridad` donde pegarás l
 ...
 - Incorpora tambien un par de lineas para cada solución implementada, indicando qué medidas hemos tomado para securizar o mitigar los ataques.
 
+---
 ## Apartado 5 - Escaneo estático y dinámico de una aplicación web.
 
 Tienes en la carpeta `app` una [aplicación spring java con nombre store_app](./files/store-app.zip).
@@ -126,6 +129,77 @@ Consulta en la actividad de la unidad 3 cómo realizar un análisis estático de
 
 
 ### Apartado 5 - 2. Ejecución de la aplicación.
+
+> Aquí tienes las indicaciones para realizarlo sobre la MV de Kali Linux que estamos utilizando para las actividades.
+>
+> Crearemos un contenedor docker para levantar la aplicación.
+
+Para ejecutar la aplicación, al ser una aplicación en Java, tenemos que compilarla primero para generar los archivos `bytecode` que son los que se ejecutaran en la MV de Java.
+
+Nuestra aplicación esta desarrollada en `Spring Java` por lo que utiliza java 8. Por ello tenemos que compilarla en esa versión de java.
+
+Vamos a ejecutar la aplicación en un contenedor docker en el cual crearemos una máquina java personalizada en la cual vamos a compilar mientras creamos dicha imagen.
+
+Hay que puntualizar, como hemos dicho antes, que hay que compilar y ejecutar con Java 8, por lo que tenemos que utilizar un contenedor con esa versión de java instalada.
+
+También podríamos hacer todo el proceso sobre un SO, instalado `Java 8` en él y posteriormente instalando y compilando con `Maven`.
+
+En nuestro caso con Docker, utilizamos un `Dockerfile` que recordamos que es un archivo en el cual especificamos las características de la máquina y las operaciones que hay que hacer al crearla, en este caso sera:
+- Instalar `Maven` para compilar el código fuente.
+- Compilar con `Maven` el proyecto.
+
+[`store-app/Dockerfile`](./files/Dockerfile)
+```dockerfile
+# ===== Etapa 1: Build con Maven + JDK 8 =====
+FROM maven:3.8.7-eclipse-temurin-8 AS build
+
+WORKDIR /app
+
+# Copiamos pom y fuentes
+COPY pom.xml .
+COPY src ./src
+
+# Compilar JAR (packaging Spring Boot)
+RUN mvn clean package -DskipTests
+
+# ===== Etapa 2: Runtime con JRE 8 =====
+FROM eclipse-temurin:8-jre
+
+WORKDIR /app
+
+# Copiamos el JAR generado desde la etapa de build
+COPY --from=build /app/target/*.jar app.jar
+
+# Puerto de tu app (según application.properties)
+EXPOSE 8888
+
+# Volúmenes para Derby y logs (ajusta rutas si hace falta)
+VOLUME ["/app/work", "/app/work/logs"]
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
+```
+
+Para crear el contenedor usamos `Docker compose`:
+
+[`docker-compose.yml](./files/docker-compose.yml)
+
+
+Para crear la imagen y levantar el contenedor, situados en el directorio `store-app`
+```bash
+
+# Nos situamos en el directorio de la aplicación
+cd ruta/a/carpeta/store-app
+
+# 1. Crear directorio para datos persistentes
+mkdir -p data
+
+# 3. Levantar
+docker compose up --build
+
+# Para producción: docker compose up -d
+```
+Y ya accederíamos a nuestra aplicación por el puerto 8888: <localhost:8888>
+
 
 
 
