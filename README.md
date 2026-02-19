@@ -53,6 +53,7 @@ Si le das a Acceder con Visual Studio Code, tendrás que dar a permitir abrir, e
 
 - Desde mi panel de control tendré acceso a tu repositorio, o sea que ya no tendrás que poner tu repositorio como público.
 
+- 
 
 ## Apartado 1 -  Actividad: Creación del entorno de Pruebas.
 
