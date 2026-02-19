@@ -198,26 +198,27 @@ docker compose up --build
 
 # Para producción: docker compose up -d
 ```
-Y ya accederíamos a nuestra aplicación por el puerto 8888: <localhost:8888>
+Esperamos a que se descargen las imágenes y se construya la nuestra personalizada (compilandose el código)  y despues de unos minutos ya accederíamos a nuestra aplicación por el puerto 8888: <localhost:8888>
 
+![alt text](./docs/images/tu35.png)
 
 ### Apartado 5 - 3. Análisis de seguridad con DAST.
 
-Una vez levantantada la aplicación en el puerto 8888, 
+Una vez levantantada la aplicación en el puerto 8888 ya estamos en disposición de poder escanearla con cualquiera de las aplicaciones DAST disponibles. En nuestro caso, en las actividades, hemos visto como podíamos comprobar la seguridad de las aplicaciones con Nessus y con OWASP ZAP.
+
 ---
 # Entrega
 
 ## Indicaciones de entrega
 
-Crea un repositorio privado en Github con nombre **Unidad3-TareaRA3-TuNombre** y lo compartes con el profesor en modo de sólo lectura.
+Al acceder a la tarea en `classroom.github.com` se te ha creado un repositorio. En él es en el que tendrás que documentar la realización de los diferentes apartados de la tarea.
 
-> Observa que al ser repositorio privado, te va a dar error al configurar `GitHub Pages`. Para esto puedes **cambiar el repositorio a público** únicamente cuando configures `Github Pages` o quieras ver el resultado. Después asegúrate que vuelve a ser privado.
+> Observa que al ser repositorio privado, por lo que no te va a permitir configurar `GitHub Pages`. No obstante deberás configurar `Mkdocs` para que genera las páginas html sobre los archivos `.md` donde estás documentando todo.
+> Recuerda añadir toda la estructura de `mkdocs`, `requeriments.txt` y el `workflow` de `GitHub Actions` para que se genere la documentación en la rama `GH-Pages`.
+>
+>> Para visualizar los archivos `html` que se están creando con ` mkdocs`, con php podemos crear un servidor web para visualizar los archivos creados: `php -S 0:8080` nos muestra el contenido web del directorio actual, por lo que si yo estoy en la rama `gh-pages` debería de mostrarse lo mismo que en `github.io`.
 
-Publicarás el repositorio en `GitHub Pages` al igual que hicimos en las otras tareas.
-
-> Recuerda añadir toda la estructura de `mkdocs`, `requeriments.txt` y el `workflow` de `GitHub Actions` para que se genere la documentación en `GitHub Pages`.
-> Recuerda, que como he comentado antes, mientras el repositorio es privado, pueden fallar el `workflow`.
->> Con php podemos crear un servidor web para visualizar los archivos creados: `php -S 0:8080` nos muestra el contenido web del directorio actual, por lo que si yo estoy en la rama `gh-pages` debería de mostrarse lo mismo que en `github.io`.
+-----------   
 
 Una vez realizada la tarea, el envío se realizará a través de la plataforma.
 Deberás de entregar al menos:
