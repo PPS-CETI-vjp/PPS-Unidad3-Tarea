@@ -253,9 +253,26 @@ Al acceder a la tarea en `classroom.github.com` se te ha creado un repositorio. 
 > Observa que al ser repositorio privado, por lo que no te va a permitir configurar `GitHub Pages`. No obstante deberás configurar `Mkdocs` para que genere las páginas html sobre los archivos `.md` donde estás documentando todo.
 > Recuerda añadir toda la estructura de `mkdocs`, `requeriments.txt` y el `workflow` de `GitHub Actions` para que se genere la documentación en la rama `GH-Pages`.
 >
-> Para visualizar los archivos `html` que se están creando con ` mkdocs`, con php podemos crear un servidor web para visualizar los archivos creados: `php -S 0:8080` nos muestra el contenido web del directorio actual, por lo que si yo estoy en la rama `gh-pages`.
+> Para visualizar los archivos `html` que se están creando con ` mkdocs`, con php podemos crear un servidor web para visualizar los archivos creados: `php -S 0:8080` nos muestra el contenido web del directorio actual, por lo que si yo estoy en la rama `gh-pages` podré ver los archivos `html` generados.
 
------------   
+```bash
+# creo una carpeta donde visualizar mi web
+mkdir /ruta/a/carpeta/web
+# descargo la rama gh-pages de mi respositorio
+git clone Mirespositorio/MiTareaUnidad3.git 
+# Me coloco en la carpeta clonada
+cd MiTareaUnidad3
+# Me cambio a la rama gh-pages
+git checkout gh-pages
+# Levantamos el servidor web con php
+php -S 0:8080
+```
+
+Visualizaríamos el contenido web de nuestro respositorio en <http://localhost:8080>
+
+![](./docs/images/tu37.png)
+
+---
 
 Una vez realizada la tarea, el envío se realizará a través de la plataforma.
 Deberás de entregar al menos:
